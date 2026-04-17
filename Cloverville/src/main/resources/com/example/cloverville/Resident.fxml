@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.cloverville.controllers.ResidentController"
+            prefWidth="900" prefHeight="700">
+
+    <children>
+        <VBox spacing="20" layoutX="20" layoutY="20" prefWidth="860">
+
+            <Label text="Residents"
+                   style="-fx-font-size: 26px; -fx-font-weight: bold;"/>
+
+            <HBox spacing="15">
+                <Button text="Add Resident"    onAction="#onAddResident"    prefWidth="150"/>
+                <Button text="Edit Resident"   onAction="#onEditResident"   prefWidth="150"/>
+                <Button text="Delete Resident" onAction="#onDeleteResident" prefWidth="150"/>
+            </HBox>
+
+            <TableView fx:id="residentTable" prefHeight="500">
+                <columns>
+                    <TableColumn fx:id="colName"   text="Name"   prefWidth="250"/>
+                    <TableColumn fx:id="colAge"    text="Age"    prefWidth="150"/>
+                    <TableColumn fx:id="colGender" text="Gender" prefWidth="150"/>
+                    <TableColumn fx:id="colPoints" text="Points" prefWidth="150"/>
+                </columns>
+            </TableView>
+
+            <HBox alignment="BOTTOM_RIGHT" spacing="15">
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button text="Save"   onAction="#onSave"   prefWidth="100"/>
+            </HBox>
+
+        </VBox>
+    </children>
+</AnchorPane>

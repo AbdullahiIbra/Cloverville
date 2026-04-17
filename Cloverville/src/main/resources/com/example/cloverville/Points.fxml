@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.cloverville.controllers.PointsController"
+            prefWidth="900" prefHeight="700">
+
+    <children>
+        <VBox spacing="20" layoutX="20" layoutY="20" prefWidth="860">
+
+            <Label text="Points Overview"
+                   style="-fx-font-size: 26px; -fx-font-weight: bold;"/>
+
+            <HBox spacing="15">
+                <Button text="Add Bonus Points" onAction="#onAddBonus" prefWidth="180"/>
+                <Button text="Reset Personal Points" onAction="#onResetPersonalPoints" prefWidth="200"/>
+
+            </HBox>
+
+            <Label text="Community Points:" style="-fx-font-size: 18px;"/>
+            <Label fx:id="lblCommunityPoints" text="0"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+            <TableView fx:id="residentTable" prefHeight="400">
+                <columns>
+                    <TableColumn fx:id="colName"   text="Resident" prefWidth="300"/>
+                    <TableColumn fx:id="colPoints" text="Personal Points" prefWidth="200"/>
+                </columns>
+            </TableView>
+
+            <HBox alignment="BOTTOM_RIGHT" spacing="15">
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button text="Save"   onAction="#onSave"   prefWidth="100"/>
+            </HBox>
+
+        </VBox>
+    </children>
+</AnchorPane>

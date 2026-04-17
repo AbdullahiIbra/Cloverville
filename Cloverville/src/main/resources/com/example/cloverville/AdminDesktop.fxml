@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.cloverville.controllers.AdminDesktopController"
+            prefWidth="1200" prefHeight="800">
+
+    <!-- LEFT MENU -->
+    <left>
+        <VBox spacing="20" alignment="TOP_CENTER"
+              style="-fx-padding: 20; -fx-background-color: #2e7d32;">
+
+            <Label text="☘ CloverVille"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white;" />
+
+            <Button text="Residents"       onAction="#showResidents"      prefWidth="150"/>
+            <Button text="Communal Tasks"  onAction="#showCommunalTasks"  prefWidth="150"/>
+            <Button text="Green Actions"   onAction="#showGreenActions"   prefWidth="150"/>
+            <Button text="Trade Offers"    onAction="#showTradeOffers"    prefWidth="150"/>
+            <Button text="Points"          onAction="#showPoints"         prefWidth="150"/>
+        </VBox>
+    </left>
+
+
+    <!-- MAIN CONTENT -->
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-padding: 20;">
+            <!-- Default welcome text -->
+            <Label text="Welcome To Cloverville Admin Desktop"
+                   style="-fx-font-size: 30px; -fx-font-weight: bold;" />
+        </StackPane>
+    </center>
+
+</BorderPane>

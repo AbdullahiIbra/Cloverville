@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.cloverville.controllers.CommunalTaskController"
+            prefWidth="900" prefHeight="700">
+
+    <children>
+        <VBox spacing="20" layoutX="20" layoutY="20" prefWidth="860">
+
+            <Label text="Weekly Communal Tasks"
+                   style="-fx-font-size: 26px; -fx-font-weight: bold;"/>
+
+            <HBox spacing="10">
+                <Button text="Add Task"      onAction="#onAddTask"      prefWidth="130"/>
+                <Button text="Edit Task"     onAction="#onEditTask"     prefWidth="130"/>
+                <Button text="Delete Task"   onAction="#onDeleteTask"   prefWidth="130"/>
+                <Button text="Complete Task" onAction="#onCompleteTask" prefWidth="150"/>
+            </HBox>
+
+            <TableView fx:id="taskTable" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="colTaskName" text="Task Name" prefWidth="300"/>
+                    <TableColumn fx:id="colPoints"   text="Points"    prefWidth="100"/>
+                </columns>
+            </TableView>
+
+            <TitledPane text="Task Details" expanded="true">
+                <content>
+                    <VBox spacing="10" style="-fx-padding: 10;">
+                        <HBox spacing="10">
+                            <Label text="Name:" style="-fx-font-weight: bold;"/>
+                            <Label fx:id="lblTaskName" text="-"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label text="Points:" style="-fx-font-weight: bold;"/>
+                            <Label fx:id="lblTaskPoints" text="-"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label text="Description:" style="-fx-font-weight: bold;"/>
+                            <Label fx:id="lblDescription" wrapText="true" text="-"/>
+                        </HBox>
+                    </VBox>
+                </content>
+            </TitledPane>
+
+            <HBox alignment="BOTTOM_RIGHT" spacing="15">
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Button text="Save"   onAction="#onSave"   prefWidth="100"/>
+            </HBox>
+
+        </VBox>
+    </children>
+</AnchorPane>

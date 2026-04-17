@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.cloverville.controllers.TradeOfferController"
+            prefWidth="900" prefHeight="700">
+
+    <children>
+        <VBox spacing="20" layoutX="20" layoutY="20" prefWidth="860">
+
+            <Label text="Trade Offers Marketplace"
+                   style="-fx-font-size: 26px; -fx-font-weight: bold;"/>
+
+            <HBox spacing="15">
+                <Button text="Post Offer"   onAction="#onPostOffer"   prefWidth="130"/>
+                <Button text="Accept Offer" onAction="#onAcceptOffer" prefWidth="130"/>
+                <Button text="Remove Offer" onAction="#onRemoveOffer" prefWidth="130"/>
+            </HBox>
+
+            <TableView fx:id="offerTable" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="colName"   text="Item"   prefWidth="200"/>
+                    <TableColumn fx:id="colCost"   text="Cost"   prefWidth="100"/>
+                    <TableColumn fx:id="colSeller" text="Seller" prefWidth="200"/>
+                </columns>
+            </TableView>
+
+            <TitledPane text="Offer Details" expanded="true">
+                <content>
+                    <VBox spacing="10" style="-fx-padding: 10;">
+                        <HBox spacing="10">
+                            <Label text="Item:" style="-fx-font-weight: bold;"/>
+                            <Label fx:id="lblItem" text="-"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label text="Cost:" style="-fx-font-weight: bold;"/>
+                            <Label fx:id="lblCost" text="-"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label text="Seller:" style="-fx-font-weight: bold;"/>
+                            <Label fx:id="lblSeller" text="-"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label text="Buyer:" style="-fx-font-weight: bold;"/>
+                            <Label fx:id="lblBuyer" text="-"/>
+                        </HBox>
+                    </VBox>
+                </content>
+            </TitledPane>
+
+            <HBox alignment="BOTTOM_RIGHT" spacing="15">
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Button text="Save"   onAction="#onSave"   prefWidth="100"/>
+            </HBox>
+
+        </VBox>
+    </children>
+</AnchorPane>
